@@ -10,9 +10,10 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  width: 500px;
   flex-shrink: 0;
+  height: 500px;
+  color: #000;
+  font-size: 24px;
 }
 #root {
   display: flex;
@@ -20,7 +21,9 @@ section {
 }
 #wrapper {
   overflow-x: auto;
-  height: 100vh
+  section {
+    width: 500px;
+  }
 }
 
 #wrapper-mandatory {
