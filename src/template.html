@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body>
+    <div id="wrapper" scroll-snap-type="proximity">
+      <div id="root">
+        <section class="section-1" scroll-snap-align style="background-color: #fff;"><div>Section1</div></section>
+        <section class="section-2" scroll-snap-align="center" style="background-color: #f00;"><div>Section2</div></section>
+        <section class="section-3" scroll-snap-align="end" style="background-color: #ff0;"><div>Section3</div></section>
+        <section class="section-4" scroll-snap-align="none" style="background-color: #0f0;"><div>Section4</div></section>
+        <section class="section-5" scroll-snap-align style="background-color: #0ff;"><div>Section5</div></section>
+        <section class="section-6" scroll-snap-align style="background-color: #00f;"><div>Section6</div></section>
+      </div>
+    </div>
+  </body>
+</html>

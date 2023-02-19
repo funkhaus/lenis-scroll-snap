@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter.ttf');
+}
+
+@import 'variables';
+@import 'scaffolding';
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 600px;
+  flex-shrink: 0;
+}
+#root {
+  display: flex;
+  width: fit-content;
+}
+#wrapper {
+  overflow-x: auto;
+  height: 100vh
+}
