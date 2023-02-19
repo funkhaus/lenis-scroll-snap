@@ -5,7 +5,7 @@ import Lenis from '@studio-freight/lenis'
 import {ScrollSnap} from '@/js/scroll-snap'
 
 const lenis = new Lenis({
-	orientation:'horizontal',
+	direction:'horizontal',
 	wrapper: document.getElementById('wrapper'),
 	content: document.getElementById('root'),
 });

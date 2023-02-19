@@ -4,8 +4,9 @@
 export class ScrollSnap {
   constructor(lenis, { snapType }) {
     this.lenis = lenis
-    this.isHorizontal = this.lenis.isHorizontal // we can set different value in case we need snap for different axis.
-    this.snapType = snapType || this.lenis.rootElement.getAttribute('scroll-snap-type') || 'mandatory'
+    this.isHorizontal = this.lenis.direction === 'horizontal' // we can set different value in case we need snap for different axis.
+    this.rootElement = this.lenis.wrapperNode === window ? this.lenis.contentNode : this.lenis.wrapperNode
+    this.snapType = snapType || this.rootElement.getAttribute('scroll-snap-type') || 'mandatory'
 
     this.initElements()
     lenis.on('scroll', this.onScroll)
@@ -13,7 +14,7 @@ export class ScrollSnap {
 
   initElements() {
     this.elements = Array.from(
-      this.lenis.rootElement.querySelectorAll(
+      this.rootElement.querySelectorAll(
         '[scroll-snap-align]:not([scroll-snap-align="none"]'
       )
     ).map((element) => {
@@ -39,14 +40,14 @@ export class ScrollSnap {
     if (Math.abs(velocity) > 0.1) return
 
     const wrapperRect =
-      this.lenis.wrapper.element === window
+      this.lenis.wrapperNode === window
         ? {
             left: 0,
             top: 0,
-            width: this.lenis.wrapper.width,
-            height: this.lenis.wrapper.height,
+            width: this.lenis.wrapperWidth,
+            height: this.lenis.wrapperHeight,
           }
-        : this.lenis.wrapper.element.getBoundingClientRect()
+        : this.lenis.wrapperNode.getBoundingClientRect()
 
     const wrapperPos = this.isHorizontal ? wrapperRect.left : wrapperRect.top
 
