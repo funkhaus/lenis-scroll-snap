@@ -12,8 +12,17 @@ const lenis = new Lenis({
 
 new ScrollSnap(lenis, {snapType: ''})
 
+const lenisMandatory = new Lenis({
+	direction:'vertical',
+	wrapper: document.getElementById('wrapper-mandatory'),
+	content: document.getElementById('root-mandatory'),
+});
+
+new ScrollSnap(lenisMandatory, {snapType: ''})
+
 function raf(time) {
 	lenis.raf(time)
+	lenisMandatory.raf(time)
 	requestAnimationFrame(raf)
 }
 

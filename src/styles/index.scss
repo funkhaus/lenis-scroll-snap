@@ -10,8 +10,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
   flex-shrink: 0;
 }
 #root {
@@ -21,4 +21,13 @@ section {
 #wrapper {
   overflow-x: auto;
   height: 100vh
+}
+
+#wrapper-mandatory {
+  overflow-y: auto;
+  height: 600px;
+}
+
+#root-mandatory {
+  height: fit-content;
 }
